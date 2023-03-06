@@ -5,6 +5,6 @@ export const handler = (source) => {
 
   const prisma = new PrismaClient();
   const customer = prisma.customer.findFirst({ where: { id: customerId } });
-
   return customer;
 };
+// Make a change in customer

@@ -6,3 +6,5 @@ export const handler = (source) => {
   const book = prisma.book.findFirst({ where: { id: bookId } });
   return book;
 };
+
+// Make a change in book

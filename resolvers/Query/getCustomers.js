@@ -6,3 +6,5 @@ export const handler = async () => {
 
   return customers;
 };
+
+// Make a change to get customers
