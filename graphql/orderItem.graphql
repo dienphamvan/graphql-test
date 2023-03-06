@@ -1,0 +1,6 @@
+type OrderItem {
+  id: ID!
+  orderId: ID!
+  bookId: ID!
+  book: Book!
+}

@@ -1,0 +1,6 @@
+type Order @logger {
+  id: ID!
+  customerId: ID!
+  customer: Customer
+  orderItems: [OrderItem!]!
+}

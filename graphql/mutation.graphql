@@ -1,0 +1,23 @@
+type Mutation {
+  addCustomer(input: AddCustomerInput!): Customer @auth
+  addBook(input: AddBookInput!): Book @auth
+  addOrder(input: AddOrderInput!): Order @auth
+  addOrderItem(input: AddOrderItemInput!): OrderItem @auth
+}
+
+input AddCustomerInput {
+  name: String!
+}
+
+input AddBookInput {
+  title: String!
+}
+
+input AddOrderInput {
+  customerId: ID!
+}
+
+input AddOrderItemInput {
+  orderId: ID!
+  bookId: ID!
+}

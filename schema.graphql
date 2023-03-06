@@ -1,0 +1,9 @@
+type Book {
+  id: ID!
+  title: String!
+}
+
+type Customer {
+  id: ID!
+  name: String!
+}

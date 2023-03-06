@@ -1,0 +1,4 @@
+type Customer @logger {
+  id: ID!
+  name: String
+}

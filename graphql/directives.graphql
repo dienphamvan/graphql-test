@@ -1,0 +1,3 @@
+directive @uppercase on FIELD_DEFINITION | OBJECT
+directive @logger on FIELD_DEFINITION | OBJECT
+directive @auth on FIELD_DEFINITION | OBJECT
