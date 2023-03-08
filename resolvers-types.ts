@@ -19,6 +19,7 @@ export type AddBookInput = {
 };
 
 export type AddCustomerInput = {
+  avatar?: InputMaybe<Scalars['String']>;
   name: Scalars['String'];
 };
 
@@ -39,6 +40,7 @@ export type Book = {
 
 export type Customer = {
   __typename?: 'Customer';
+  avatar?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   name?: Maybe<Scalars['String']>;
 };
@@ -224,6 +226,7 @@ export type BookResolvers<ContextType = any, ParentType extends ResolversParentT
 };
 
 export type CustomerResolvers<ContextType = any, ParentType extends ResolversParentTypes['Customer'] = ResolversParentTypes['Customer']> = {
+  avatar?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;

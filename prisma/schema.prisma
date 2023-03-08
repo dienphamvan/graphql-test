@@ -19,9 +19,10 @@ model Book {
 }
 
 model Customer {
-    id    String  @id @default(uuid())
-    name  String?
-    Order Order[]
+    id     String  @id @default(uuid())
+    name   String?
+    avatar String?
+    Order  Order[]
 }
 
 model Order {
