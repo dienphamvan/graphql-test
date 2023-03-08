@@ -7,5 +7,3 @@ export const handler = (source) => {
   const orderItems = prisma.orderItem.findMany({ where: { orderId } });
   return orderItems;
 };
-
-// Make a change in order item
