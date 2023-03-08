@@ -30,7 +30,5 @@ export const mergeResolvers = async () => {
     })
   );
 
-  console.log("resolvers", resolvers);
-
   return resolvers;
 };
