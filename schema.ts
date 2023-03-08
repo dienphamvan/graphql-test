@@ -1,7 +1,7 @@
 import { createSchema } from "graphql-yoga";
 import { mergeTypeDefs } from "@graphql-tools/merge";
 import { loadFilesSync } from "@graphql-tools/load-files";
-import { mergeResolvers } from "./utils/merge-resolvers.js";
+import { mergeResolvers } from "./utils/merge-resolvers";
 import { Resolvers } from "./resolvers-types";
 
 export const createMergedSchema = async () => {

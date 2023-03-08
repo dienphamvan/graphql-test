@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "generate": "graphql-codegen"
+    "start": "node app.ts",
+    "dev": "nodemon app.ts",
+    "generate": "graphql-codegen",
+    "studio": "npx prisma studio"
   },
   "dependencies": {
     "@graphql-codegen/cli": "^3.2.1",
@@ -16,6 +16,7 @@
     "@graphql-tools/load-files": "^6.6.1",
     "@graphql-tools/utils": "^9.2.1",
     "@prisma/client": "^4.10.1",
+    "class-validator": "^0.14.0",
     "glob": "^8.1.0",
     "graphql": "^16.6.0",
     "graphql-tools": "^8.3.18",
@@ -24,6 +25,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.1",
     "nodemon": "^2.0.20",
     "prisma": "^4.10.1",
     "typescript": "^4.9.5"

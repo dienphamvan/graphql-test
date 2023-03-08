@@ -1,10 +1,10 @@
 import { createServer } from "node:http";
 import { createYoga, createPubSub } from "graphql-yoga";
-import { createMergedSchema } from "./schema.js";
+import { createMergedSchema } from "./schema";
 import { PrismaClient } from "@prisma/client";
 import { getDirective, MapperKind, mapSchema } from "@graphql-tools/utils";
 import { defaultFieldResolver } from "graphql";
-import jwt from "jsonwebtoken";
+import * as jwt from "jsonwebtoken";
 
 const bootstrap = async () => {
   const pubSub = createPubSub();
@@ -32,6 +32,8 @@ const bootstrap = async () => {
               return [];
             }
           };
+
+          return fieldConfig;
         }
       },
     });

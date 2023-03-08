@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import jwt from "jsonwebtoken";
+import * as jwt from "jsonwebtoken";
 
 export const handler = async (_, args) => {
   const { email, password } = args;

@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import SUBSCRIPTION_TYPE from "../../const/Subscription.js";
+import SUBSCRIPTION_TYPE from "../../const/Subscription";
 
 export const handler = async (_, { input }, { pubSub }) => {
   const { customerId } = input;

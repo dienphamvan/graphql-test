@@ -1,14 +1,13 @@
-import glob from "glob";
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
+const glob = require("glob");
 
-const __fileName = fileURLToPath(import.meta.url);
-const __dirname = dirname(__fileName);
+// const __fileName = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__fileName);
 
+const path = require("path");
 const resolversFolder = path.resolve(__dirname, "../resolvers");
 
 export const mergeResolvers = async () => {
-  const files = glob.sync("*/*.js", {
+  const files = glob.sync("*/*.ts", {
     cwd: resolversFolder,
   });
 
@@ -17,7 +16,7 @@ export const mergeResolvers = async () => {
   await Promise.all(
     files.map(async (file) => {
       const fileName = path.join(resolversFolder, file);
-      const { handler } = await import("file://" + fileName);
+      const { handler } = await import(fileName);
 
       if (!handler) return;
 
@@ -30,6 +29,8 @@ export const mergeResolvers = async () => {
       };
     })
   );
+
+  console.log("resolvers", resolvers);
 
   return resolvers;
 };

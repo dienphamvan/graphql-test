@@ -1,4 +1,4 @@
-import SUBSCRIPTION_TYPE from "../../const/Subscription.js";
+import SUBSCRIPTION_TYPE from "../../const/Subscription";
 
 export const handler = {
   subscribe: (_, __, { pubSub }) =>
