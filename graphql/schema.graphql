@@ -1,0 +1,68 @@
+type Book {
+  id: ID!
+  title: String
+}
+
+type Customer @logger {
+  id: ID!
+  name: String
+}
+
+directive @logger on FIELD_DEFINITION | OBJECT
+
+directive @auth on FIELD_DEFINITION | OBJECT
+
+type Mutation {
+  addCustomer(input: AddCustomerInput!): Customer @auth
+  addBook(input: AddBookInput!): Book @auth
+  addOrder(input: AddOrderInput!): Order @auth
+  addOrderItem(input: AddOrderItemInput!): OrderItem @auth
+}
+
+input AddCustomerInput {
+  name: String!
+}
+
+input AddBookInput {
+  title: String!
+}
+
+input AddOrderInput {
+  customerId: ID!
+}
+
+input AddOrderItemInput {
+  orderId: ID!
+  bookId: ID!
+}
+
+type Order @logger {
+  id: ID!
+  customerId: ID!
+  customer: Customer
+  orderItems: [OrderItem!]!
+}
+
+type OrderItem {
+  id: ID!
+  orderId: ID!
+  bookId: ID!
+  book: Book!
+}
+
+type Query {
+  login(email: String!, password: String!): String!
+  getBooks: [Book!]! @auth
+  getCustomers: [Customer!]!
+  getOrders: [Order]
+}
+
+type Subscription {
+  newOrder: Order
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}

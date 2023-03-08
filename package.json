@@ -7,7 +7,8 @@
     "start": "node app.ts",
     "dev": "nodemon app.ts",
     "generate": "graphql-codegen",
-    "studio": "npx prisma studio"
+    "studio": "npx prisma studio",
+    "codegen": "yarn graphql-codegen"
   },
   "dependencies": {
     "@graphql-codegen/cli": "^3.2.1",
@@ -17,6 +18,7 @@
     "@graphql-tools/utils": "^9.2.1",
     "@prisma/client": "^4.10.1",
     "class-validator": "^0.14.0",
+    "fs-extra": "^11.1.0",
     "glob": "^8.1.0",
     "graphql": "^16.6.0",
     "graphql-tools": "^8.3.18",
