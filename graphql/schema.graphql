@@ -6,6 +6,7 @@ type Book {
 type Customer @logger {
   id: ID!
   name: String
+  avatar: String
 }
 
 directive @logger on FIELD_DEFINITION | OBJECT

@@ -1,9 +1,5 @@
-const glob = require("glob");
-
-// const __fileName = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__fileName);
-
-const path = require("path");
+import glob from "glob";
+import path from "path";
 const resolversFolder = path.resolve(__dirname, "../resolvers");
 
 export const mergeResolvers = async () => {
